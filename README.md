@@ -31,7 +31,7 @@ Git yüklü olsun.
 Adım Adım Kurulum
 
 Repoyu Klonla:Bashgit clone https://github.com/Scorpion292439/scorp-on-toolkit-v2.git
-Klasöre Gir:Bashcd scorp-on-toolkit-v2
+Klasöre Gir:cd scorpiontoolkit
 Bağımlılıkları Yükle (Opsiyonel – Temel kütüphaneler):Bashpip install requests colorama
 Başlat:Bashpython main.py
 
