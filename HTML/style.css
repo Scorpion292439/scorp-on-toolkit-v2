@@ -1,0 +1,182 @@
+/* GENEL STİL */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* BAŞLIKLAR */
+h1 {
+    color: #007bff;
+    text-align: center;
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #007bff;
+}
+
+h2 {
+    color: #555;
+    border-left: 5px solid #ffc107;
+    padding-left: 15px;
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #007bff;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+/* KOD BLOKLARI VE KOPYALA BUTONU STİLİ */
+.code-block {
+    display: flex; /* İçerikleri yan yana hizala */
+    align-items: center; /* Dikeyde ortala */
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    position: relative; /* Butonun koddan ayrılmaması için */
+}
+
+.code-block code {
+    flex-grow: 1; /* Kodun mümkün olduğunca yer kaplamasını sağla */
+    background: none;
+    color: #000;
+    padding: 0;
+    overflow-x: auto;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9em;
+    user-select: text; /* Kodun seçilebilir olmasını sağlar */
+}
+
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-left: 10px;
+    flex-shrink: 0; /* Butonun küçülmesini engeller */
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.copy-btn:active {
+    background-color: #28a745; /* Tıklayınca yeşile dönme efekti */
+}
+
+/* DİĞER ALANLAR */
+
+.repo-link { text-align: center; margin-bottom: 25px; font-size: 0.9em; }
+.repo-link a { color: #28a745; text-decoration: none; font-weight: bold; }
+
+.warning {
+    background-color: #ffe5e5;
+    color: #a00;
+    padding: 15px;
+    border: 1px solid #f00;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.token-area { text-align: center; margin: 20px 0; }
+#token-link {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#token-link:hover { background-color: #218838; }
+
+/* EKRAN GÖRÜNTÜLERİ GALERİSİ */
+.screenshot-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.screenshot-item {
+    /* Mobilde %100, masaüstünde %50'den biraz az yer kaplasın */
+    flex-basis: calc(50% - 10px); 
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.screenshot-item:hover {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.screenshot-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* MOBİL UYUMLULUK AYARLARI (BREAKPOINT) */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    /* Mobil cihazlarda görüntüler tek sütun halinde listelenir */
+    .screenshot-item {
+        flex-basis: 100%;
+    }
+    
+    /* Kod bloğu ve butonun mobil görünümü */
+    .code-block {
+        flex-direction: column; /* Mobil cihazda alt alta diz */
+        align-items: flex-start;
+        padding: 10px;
+    }
+    
+    .copy-btn {
+        width: 100%; /* Mobil cihazda butonu tam genişlik yap */
+        margin-top: 10px;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+    
+    .code-block code {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
